@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block pages %}
+
+    <section class="card container mxw-400 row pr-0 o-hide">
+        <div class="group container">
+            <h2> {{ note.title }} </h2>
+            <div class="row primary jc-se container epic_f-inherit">
+                <a href="{% url 'updateView' note.id %}" class="ep-pen"></a>
+                <a href="{% url 'deleteView' note.id %}" class="ep-trash"></a>
+            </div>
+            <hr class="f-col">
+            <div class="">
+                <span>{{ note.content | safe }}</span>
+            </div>
+        </div>
+    </section>
+
+{% endblock pages%}

@@ -1,0 +1,94 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> unote | take notes anywhere </title>
+
+
+    <script src='https://epic-styles.github.io/epic.js'></script>
+
+    <!-- <link rel="shortcut icon" href='{% static "billmink_logo.png" %}' type="image/x-icon"> -->
+
+    <style>
+        span.helptext,
+        #photo-clear_id {
+          display: none;
+        }
+        label {
+          font-size: 90%;
+          display: block;
+          padding-bottom: 7px;
+        }
+        form ul li {
+          font-size: 70%;
+          width: 85%;
+          margin-bottom:5px;
+          color: var(--gray);
+        }
+        form * {
+            color: var(--white);
+            letter-spacing: 1.1px;
+        }
+        form ul.errorlist li {
+          color: var(--red);
+        }
+        form .errorlist {
+            background-color: #fff;
+            border-radius: 5px;
+            width: 90%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 0.5em;
+        }
+        form option {
+            color: black !important
+        }
+        form p select {
+            width: 200px;
+        }
+    </style>
+
+</head>
+<body style="background-color: #fff;" id="body">
+
+<main id="app" class="mxw-400 m-auto lg_mxw-900">
+   
+    <header class="epic_header">
+        <a href="{% url 'homeView' %}" class="epic_logo row fs-4 f-col">
+            unote <div class="w-5px h-5px bdrs-circle bg-col"></div>
+        </a>
+        <nav class="epic_nav mxw-350">
+            {% if request.user.is_authenticated %}
+                <a href="{% url 'logout' %}"> Logout </a>
+                <a href="{% url 'meView' %}"> All Notes </a>
+                <a href="{% url 'createView' %}"> Add Notes </a>
+            {% else %}
+                <a href="{% url 'login' %}"> Login </a>
+                <a href="{% url 'registerView' %}"> Sign Up </a>
+            {% endif %}
+            <div class="epic_close-nav">Close</div>
+        </nav>
+        <div class="epic_menu-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" class="menu-icon" width="25" height="30" viewBox="0 0 16 16">
+                <path d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+            </svg> 
+        </div>
+    </header>
+    
+    {% block pages %}{% endblock pages %}
+
+    {% if toast_success_msg %}
+    <div class="pos-absolute bottom-left w-100vw mxw-250 p-2 bdrs success ml-2 mb-2">
+        {{ toast_success_msg }}
+    </div>
+    {% endif %}
+</main>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block pages %}
+
+    <section class="container w-85">
+        <h1 class="fs-4"> Confirm delete note  </h1>
+        <p>
+            You are about to delete notes
+        </p>
+        <form action="." method="post" class="">
+                {% csrf_token %}
+               {{ form.as_p }}
+                <div class="epic_form-actions">
+                    <button type="submit" class="btn error"> Confirm <button>
+                </div>
+        </form>
+    </section>
+
+    {% endblock pages%}

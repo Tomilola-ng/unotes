@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load static %} 
+
+
+{% block pages %}
+
+    <section class="container w-85 epic_to-back">
+
+        <div class="landing--page col mh-65vh md_mh-100vh">
+            <div class="text ta-c">
+                <h1 class="fs-1">
+                    Take Note <span class="sm_dp-none">of Everything</span> on <br> the go
+                </h1>
+                <div class="gap"></div>
+                <p class="mxw-500 m-auto">
+                    Streamline your Life, Job, and never Forget a Thing with our User-Friendly <span class="sm_dp-none">Online</span> Notes App.
+                </p>
+                <div class="gap"></div>
+                <div class="row container">
+                    <a href="{% url 'registerView'  %}" class="btn primary m-auto"> Start Now </a>
+                </div>
+            </div>
+            <div class="img container mxw-500 plr-0 mlr-0 observe_anim">
+                <img src="{% static 'study-man.png' %}" alt="" srcset="">
+            </div>
+        </div>
+
+        <div class="feature--page row fw-w">
+            <article class="card container bx-sh-2-col h-300px w-300px col jc-se anim_left observe_anim">
+                <h1 class="ep-pen ta-c w-100 fs-1 f-col mb-0"></h1>
+                <h1 class="f-col fs-2"> Easily accessible </h1>
+
+                <p class="ta-c"> 
+                    Every notes about your ideas, memories, lyrics, designs and more, all in one spot, accessible anywhere with a smart device.
+                </p>
+
+                <button class="btn primary epic_f-inherit"> <a href="{% url 'registerView' %}" class="container"> Begin </a> </button>
+            </article>
+
+            <article class="card container bx-sh-2-col h-300px w-300px col jc-se right-in observe_anim">
+                <h1 class="ep-lock ta-c w-100 fs-1 f-col mb-0"></h1>
+                <h1 class="f-col fs-2"> Secured </h1>
+
+                <p class="ta-c"> 
+                    All notes is stored on a Postgres SQL database hosted on heroku servers deep in the cloud, secured wit SSH for optimal security.
+                </p>
+
+                <button class="btn primary epic_f-inherit"> <a href="{% url 'registerView' %}" class="container"> Sign-Up </a> </button>
+            </article>
+        </div>
+
+        <div class="gap h-5vh"></div>
+
+        <article class="proof row fw-w bolder ta-c fs-3">
+            <h1 class="w-100 fs-1"> Users comments </h1>
+
+            <p class="card container primary col w-350px md_w-200px"> " Great " </p>
+            <p class="card container primary col w-350px md_w-200px"> " Useful " </p>
+            <p class="card container primary col md_pbt-3 w-350px md_w-200px"> " Nice " </p>
+            <p class="card container primary col w-350px md_w-200px"> " 👌👌 " </p>
+            <p class="card container primary col w-350px md_w-200px"> " Resourceful " </p>
+            <p class="card container primary col w-350px md_w-200px"> " Cool " </p>
+            <p class="card container primary col w-350px md_w-200px"> " 👍👍 " </p>
+            <p class="card container primary col w-350px md_w-200px"> " 💯💯 " </p>
+        </article>
+
+        <article class="row fw-w jc-se container">
+            <div class="observe_anim anim_left anim_d-1 img w-350px bdrs o-hide">
+                <img src="{% static 'tomi.jpeg' %}" alt="" srcset="">
+            </div>
+            <div class="lg_dp-none gap h-10px"></div>
+            <p class="w-350px ta-c p-1 observe_anim anim_right">
+                Hello you on the other side of the screen, I am 
+                <a href="https://linktr.ee/tomilola_ng" class="f-col underline">
+                    Oluwafemi Tomilola
+                </a> a digital Entrepreneur skilled in Full stack engineering and Product designing. 
+                <br>
+                <b>unote</b> is a siple web based notes taking app. If you find it useful and will like to support me you can do that by following me on my socials
+            </p>
+        </article>
+
+        {% include 'core/footer.html' %}
+
+    </section>
+
+{% endblock pages %}
+
+<!-- 
+    Notes app, Productivity, Organization, user-friendly, streamline, Never forget
+ -->

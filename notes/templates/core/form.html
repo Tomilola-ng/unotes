@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block pages %}
+
+    <section class="container w-85 f-black epic_f-inherit">
+        <h1 class="fs-4 f-col"> {{  formname  }}  </h1>
+
+        <form action="." method="post" class="">
+            {% csrf_token %}
+            {{ form.media }}
+            {{ form.as_p }}
+            <div class="epic_form-actions">
+                <button type="submit" class="btn primary"> Submit </button>
+
+                {% if loginLink %}
+                    <a href="{% url 'login' %}" class="btn secondary"> Login </a>
+                {% endif %}
+            </div>
+        </form>
+    </section>
+
+    {% endblock pages%}

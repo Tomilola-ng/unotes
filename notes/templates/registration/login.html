@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block pages %}
+
+    <section class="container h-85vh col">
+        <form action="." method="post" class="w-50 container scale-125 mt-6 f-black epic_f-inherit">
+            <h1 class="fs-1 f-col"> Welcome Back  </h1>
+            {% csrf_token %}
+            <label for="id_username">Username</label>            
+            <input type="text" name="username" autofocus="" autocapitalize="none" autocomplete="username" maxlength="150" required="" id="id_username">
+            <label for="id_password">Password:</label>
+            <input type="password" name="password" autocomplete="current-password" required="" id="id_password">
+            <div class="epic_form-actions">
+                <button type="submit" class="btn primary"> Submit </button>
+                <a href="{% url 'registerView' %}" class="link"> Sign-Up </a>
+            </div>
+        </form>
+    </section>
+
+    {% endblock pages%}
