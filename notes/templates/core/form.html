@@ -9,14 +9,18 @@
             {% csrf_token %}
             {{ form.media }}
             {{ form.as_p }}
+            <script>
+                let v = document.querySelector('#cke_id_content');
+                v.classList.add('sm_mxw-300 ')
+            </script>
             <div class="epic_form-actions">
                 <button type="submit" class="btn primary"> Submit </button>
-
                 {% if loginLink %}
                     <a href="{% url 'login' %}" class="btn secondary"> Login </a>
                 {% endif %}
             </div>
         </form>
+
     </section>
 
     {% endblock pages%}

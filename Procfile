@@ -1,1 +1,1 @@
-web: python manage.py migrate && python manage.py collectstatic && gunicorn cloud_notes.wsgi
+web: python manage.py migrate && gunicorn cloud_notes.wsgi

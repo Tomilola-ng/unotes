@@ -23,6 +23,7 @@ def register(request):
     if request.method == 'GET':
         context = {
             'form': CustomUserCreationForm,
+            'loginLink': True,
             'formname': 'Sign Up'
         }
         return render(request, 'core/form.html', context )
