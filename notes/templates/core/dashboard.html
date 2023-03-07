@@ -30,22 +30,3 @@
     </section>
 
 {% endblock pages%} 
-<div class="fs-3 bold ta-c col w-80 container"> 
-    {{ user }} Notes 
-    <a href="{% url 'createView'  %}" class="ep-plus-circle fs-4 btn primary"> Add New Notes </i>
-</div>
-
-<div class="card container mxw-300 row pr-0 o-hide">
-    <div class="group container">
-        <h2> {{ note.title }} </h2>
-        <hr class="f-col">
-        <div class="row jc-sb container">
-            <a href="{% url 'detailView' note.id %}"  class="plr-3 btn primary"> View </a>
-            <span>{{ note.date_posted | date:'M d o' }}</span>
-        </div>
-    </div>
-    <div class="col h-100px w-50px primary jc-se ml-1 epic_f-inherit">
-        <a href="{% url 'updateView' note.id %}" class="ep-pen"></a>
-        <a href="{% url 'deleteView' note.id %}" class="ep-trash"></a>
-    </div>
-</div>
